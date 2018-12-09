@@ -4,4 +4,4 @@ Plataforma de comunicación en politica de drogas utilizando:
 -Nuxt
 -Wp Rest API
 -Mendeley API
-- y otras opciones 
+-y otras opciones 
