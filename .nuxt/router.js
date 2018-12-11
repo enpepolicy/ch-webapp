@@ -3,6 +3,8 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
+const _11a5e0e1 = () => import('..\\pages\\team\\index.vue' /* webpackChunkName: "pages_team_index" */).then(m => m.default || m)
+const _15befcf2 = () => import('..\\pages\\analisis\\index.vue' /* webpackChunkName: "pages_analisis_index" */).then(m => m.default || m)
 const _3df26a34 = () => import('..\\pages\\inspire.vue' /* webpackChunkName: "pages_inspire" */).then(m => m.default || m)
 const _2387d1de = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
 
@@ -64,6 +66,16 @@ export function createRouter () {
     linkExactActiveClass: 'nuxt-link-exact-active',
     scrollBehavior,
     routes: [
+		{
+			path: "/team",
+			component: _11a5e0e1,
+			name: "team"
+		},
+		{
+			path: "/analisis",
+			component: _15befcf2,
+			name: "analisis"
+		},
 		{
 			path: "/inspire",
 			component: _3df26a34,
