@@ -5,6 +5,11 @@ Vue.use(Router)
 
 const _11a5e0e1 = () => import('..\\pages\\team\\index.vue' /* webpackChunkName: "pages_team_index" */).then(m => m.default || m)
 const _15befcf2 = () => import('..\\pages\\analisis\\index.vue' /* webpackChunkName: "pages_analisis_index" */).then(m => m.default || m)
+const _56541661 = () => import('..\\pages\\politica-de-privacidad\\index.vue' /* webpackChunkName: "pages_politica-de-privacidad_index" */).then(m => m.default || m)
+const _242bf3d4 = () => import('..\\pages\\recursos\\index.vue' /* webpackChunkName: "pages_recursos_index" */).then(m => m.default || m)
+const _0b644b39 = () => import('..\\pages\\recursos\\observatorio-de-articulos-cientificos\\index.vue' /* webpackChunkName: "pages_recursos_observatorio-de-articulos-cientificos_index" */).then(m => m.default || m)
+const _65c690bc = () => import('..\\pages\\recursos\\enlaces-de-interes\\index.vue' /* webpackChunkName: "pages_recursos_enlaces-de-interes_index" */).then(m => m.default || m)
+const _977978bc = () => import('..\\pages\\recursos\\observatorio-de-twits-en-politica-de-drogas\\index.vue' /* webpackChunkName: "pages_recursos_observatorio-de-twits-en-politica-de-drogas_index" */).then(m => m.default || m)
 const _2387d1de = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
 
 
@@ -74,6 +79,31 @@ export function createRouter () {
 			path: "/analisis",
 			component: _15befcf2,
 			name: "analisis"
+		},
+		{
+			path: "/politica-de-privacidad",
+			component: _56541661,
+			name: "politica-de-privacidad"
+		},
+		{
+			path: "/recursos",
+			component: _242bf3d4,
+			name: "recursos"
+		},
+		{
+			path: "/recursos/observatorio-de-articulos-cientificos",
+			component: _0b644b39,
+			name: "recursos-observatorio-de-articulos-cientificos"
+		},
+		{
+			path: "/recursos/enlaces-de-interes",
+			component: _65c690bc,
+			name: "recursos-enlaces-de-interes"
+		},
+		{
+			path: "/recursos/observatorio-de-twits-en-politica-de-drogas",
+			component: _977978bc,
+			name: "recursos-observatorio-de-twits-en-politica-de-drogas"
 		},
 		{
 			path: "/",
