@@ -1,6 +1,6 @@
 <template lang="html">
 
-  <b-navbar sticky="true" toggleable="sm" type="light" class="navbar align-items-center">
+  <b-navbar :sticky="true" toggleable="sm" type="light" class="navbar align-items-center">
 
     <b-navbar-brand to="/">
       <b-img height="70" id="logoCH" src="/LogoCHConTexto.png" alt="Logo del Colectivo Hofmann"/>
@@ -16,7 +16,7 @@
       <b-nav-item to="/analisis" >Análisis</b-nav-item>
       <b-nav-item to="/team" >Team</b-nav-item>
 
-      <b-nav-item-dropdown  text="Recursos" right="false">
+      <b-nav-item-dropdown  text="Recursos" right>
       <b-dropdown-item to="/recursos/observatorio-de-twits-en-politica-de-drogas">Observatorio de Articulos Cientificos</b-dropdown-item>
       <b-dropdown-item to="/recursos/observatorio-de-articulos-cientificos">Observatorio de twits en Politica de Drogas</b-dropdown-item>
       <b-dropdown-item to="/recursos/enlaces-de-interes">Enlaces de Interes</b-dropdown-item>
@@ -26,8 +26,8 @@
       <b-button
       v-b-modal.modalPrevent
       id="suscribeteBtn"
+      href="http://eepurl.com/gbfiCf"
       >Suscribete!</b-button>
-      <suscripcion/>
       <!--Fin de Modal de suscripcion-->
 
       </b-navbar-nav>
@@ -47,10 +47,10 @@
   }
 </style>
 <script>
-import suscripcion from '@/components/suscripcion'
+
 export default {
   components: {
-    suscripcion
+
   }
 }
 </script>
