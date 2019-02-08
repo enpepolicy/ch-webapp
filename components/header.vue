@@ -22,13 +22,13 @@
       <b-dropdown-item to="/recursos/enlaces-de-interes">Enlaces de Interes</b-dropdown-item>
       </b-nav-item-dropdown>
 
-      <!-- Inicio Modal de suscripcion -->
+      <!-- Inicio suscripcion mailchimp -->
       <b-button
       v-b-modal.modalPrevent
       id="suscribeteBtn"
       href="http://eepurl.com/gbfiCf"
       >Suscribete!</b-button>
-      <!--Fin de Modal de suscripcion-->
+      <!--Fin de suscripcion mailchimp-->
 
       </b-navbar-nav>
 
