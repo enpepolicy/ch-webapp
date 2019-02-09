@@ -1,10 +1,36 @@
 <template lang="html">
-  <div class="">
-    <h1>Analisís</h1>
-      <b-card class="" id="holabb">
 
-    </b-card>
-  </div>
+  <b-container >
+
+    <h1>Analisís</h1>
+
+    <b-row>
+      <b-col sm="6">
+
+
+        <div>
+        
+          <h1> </h1>
+          <p>prueba</p>
+        </div>
+
+
+      </b-col>
+    </b-row>
+<!--
+    <b-col sm="6">
+      2.3
+    </b-col>
+    <b-col sm="6">
+      2.4
+    </b-col>
+    <b-col sm="6">
+      2.4
+    </b-col>
+  -->
+
+
+  </b-container>
 </template>
 
 <script>
