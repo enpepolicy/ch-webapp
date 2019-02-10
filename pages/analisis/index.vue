@@ -1,19 +1,26 @@
 <template lang="html">
+  <!-- El contenedor se necesita para la funcionalidad de b-col y b-row-->
   <b-container >
-    <h1>Analisís</h1>
-    <b-row>
-      <b-col v-for="post in posts" sm="6">
-<div       v-for="imagenFt in post.imagenes">
-        <b-card
-        v-bind:title="post.titulo"
+    <b-row class="mt-4">
+      <b-col v-for="post in posts" md="4"  >
+        <div v-for="imagenFt in post.imagenes" >
 
+
+
+        <b-card
+        class="m-2"
+        v-bind:title="post.titulo"
         v-bind:img-src="imagenFt.source_url"
+        img-top
+        v-bind:img-alt="imagenFt.slug"
         >
 
         <p v-html="post.excerpt"></p>
         </b-card>
+
+
 </div>
-      </b-col> 
+      </b-col>
     </b-row>
   </b-container>
 </template>
@@ -27,26 +34,15 @@ export default {
       }
   },
   mounted (){
-/*    axios
-      .get('https://colectivohofmann.com/wp-json/wp/v2/posts/?_embed')
-      .then(response =>{
-        this.posts = response.data;
-
-
-        console.log(this.posts[0]._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url);
-      })
-      .catch(function (error) {
-        console.log(error);
-      }) */
-
       this.cargarDatosPosts();
       console.log('Instancia Montada');
     },
-    methods: {
+  methods: {
       cargarDatosPosts(){
         axios
           .get('https://colectivohofmann.com/wp-json/wp/v2/posts/?_embed')
           .then(response =>{
+            console.log(response.data);
           /*Creamos nuevo objeto solo con datos que necesitamos del JSON de WP*/
           const listado = response.data.map(post => {
             return{
@@ -61,8 +57,9 @@ export default {
             console.log(error);
           });
       }
-    }
+    },
 }
 </script>
 <style lang="css">
+
 </style>
