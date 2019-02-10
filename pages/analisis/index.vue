@@ -3,16 +3,17 @@
     <h1>Analisís</h1>
     <b-row>
       <b-col v-for="post in posts" sm="6">
+<div       v-for="imagenFt in post.imagenes">
         <b-card
-        v-bind:title="post.title.rendered"
+        v-bind:title="post.titulo"
 
-        v-bind:img-src="post._embedded['wp:featuredmedia'][0].source_url"
+        v-bind:img-src="imagenFt.source_url"
         >
 
-            <p v-html="post.excerpt.rendered"></p>
+        <p v-html="post.excerpt"></p>
         </b-card>
-
-      </b-col>
+</div>
+      </b-col> 
     </b-row>
   </b-container>
 </template>
@@ -24,19 +25,42 @@ export default {
       return {
         posts: []
       }
-    },
-  created (){
-    axios
+  },
+  mounted (){
+/*    axios
       .get('https://colectivohofmann.com/wp-json/wp/v2/posts/?_embed')
       .then(response =>{
         this.posts = response.data;
 
 
-        console.log(this.posts[0]._embedded['wp:featuredmedia'][0].source_url);
+        console.log(this.posts[0]._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url);
       })
       .catch(function (error) {
         console.log(error);
-      })
+      }) */
+
+      this.cargarDatosPosts();
+      console.log('Instancia Montada');
+    },
+    methods: {
+      cargarDatosPosts(){
+        axios
+          .get('https://colectivohofmann.com/wp-json/wp/v2/posts/?_embed')
+          .then(response =>{
+          /*Creamos nuevo objeto solo con datos que necesitamos del JSON de WP*/
+          const listado = response.data.map(post => {
+            return{
+              imagenes: post._embedded['wp:featuredmedia'],
+              titulo: post.title.rendered,
+              excerpt: post.excerpt.rendered,
+            }
+          });
+          this.posts = listado;
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
     }
 }
 </script>
