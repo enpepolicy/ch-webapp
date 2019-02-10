@@ -1,50 +1,44 @@
 <template lang="html">
-
   <b-container >
-
     <h1>Analisís</h1>
-
     <b-row>
-      <b-col sm="6">
+      <b-col v-for="post in posts" sm="6">
+        <b-card
+        v-bind:title="post.title.rendered"
 
+        v-bind:img-src="post._embedded['wp:featuredmedia'][0].source_url"
+        >
 
-        <div>
-        
-          <h1> </h1>
-          <p>prueba</p>
-        </div>
-
+            <p v-html="post.excerpt.rendered"></p>
+        </b-card>
 
       </b-col>
     </b-row>
-<!--
-    <b-col sm="6">
-      2.3
-    </b-col>
-    <b-col sm="6">
-      2.4
-    </b-col>
-    <b-col sm="6">
-      2.4
-    </b-col>
-  -->
-
-
   </b-container>
 </template>
 
 <script>
-
+import axios from 'axios';
 export default {
-  head: {
-    script: [
-      { src: 'https://unpkg.com/axios/dist/axios.min.js' },
-      { src: '/axibb.js', body: true }
-    ]
-  }
+  data (){
+      return {
+        posts: []
+      }
+    },
+  created (){
+    axios
+      .get('https://colectivohofmann.com/wp-json/wp/v2/posts/?_embed')
+      .then(response =>{
+        this.posts = response.data;
+
+
+        console.log(this.posts[0]._embedded['wp:featuredmedia'][0].source_url);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+    }
 }
-
 </script>
-
 <style lang="css">
 </style>
