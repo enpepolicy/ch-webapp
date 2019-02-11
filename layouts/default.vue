@@ -1,5 +1,5 @@
-<template>
-  <div >
+<template >
+  <div id="fondo">
     <Header/>
     <nuxt/>
     <Footer/>
@@ -18,5 +18,7 @@
 </script>
 
 <style>
-
+#fondo {
+  background-color: #DFF2F9;
+}
 </style>
