@@ -1,6 +1,7 @@
 <template >
   <div id="fondo">
     <Header/>
+<!--    <img src="patron1Recurso1.svg" > -->
     <nuxt/>
     <Footer/>
   </div>
@@ -19,6 +20,9 @@
 
 <style>
 #fondo {
-  background-color: #DFF2F9;
+  background-image:url("/patronXGris.svg");
+  background-repeat: repeat;
+  background-size: 2em;
+  background-attachment: fixed;
 }
 </style>
